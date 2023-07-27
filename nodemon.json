@@ -1,0 +1,4 @@
+{
+	"delay": 100,
+	"watch": ["src", ".env", ".env.local"]
+}
