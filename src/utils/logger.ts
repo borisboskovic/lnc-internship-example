@@ -1,6 +1,5 @@
 import path from "path";
 import fs from "fs";
-import { format } from "date-fns";
 import winston from "winston";
 import winstonDaily from "winston-daily-rotate-file";
 
@@ -24,7 +23,7 @@ export const Logger = winston.createLogger({
 				colors: {
 					error: "red",
 					warn: "yellow",
-					info: "bold cyan",
+					info: "bold greenBG",
 					http: "magenta",
 					debug: "blueBG",
 				},
@@ -50,7 +49,7 @@ export const Logger = winston.createLogger({
 		winston.format.timestamp({ format: "HH:mm:ss" }),
 		winston.format.printf(
 			({ level, message, timestamp }) =>
-				`${timestamp} - ${level.toUpperCase()}: ${message}`
-		)
+				`${timestamp} - ${level.toUpperCase()}: ${message}`,
+		),
 	),
 });
